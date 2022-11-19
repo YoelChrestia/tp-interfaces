@@ -13,7 +13,7 @@ const Login = () => {
             <Stack w={'100%'} h={'100%'} bgColor={colors.blueOpacity} p={'30px'} align={direction === 'column' ? 'center' : 'none'}>
                 <Stack direction={direction} display={'flex'} justify={'space-between'} align={'start'} h={direction === 'row'?  'none' : '160px'}>
                     <Image src="/images/logo.svg" alt="logo" width={'120px'} height={'120px'} color={'blue'}/>
-                    <Text fontSize={sizes.hiperTitle} w={'35%'} textAlign={'center'} color={'white'} fontWeight={400} hidden={direction === 'column'}>Sistema de gestión de contenidos Técnica Martínez de alzaga - DOCENTE</Text>
+                    <Text fontSize={sizes.hiperTitle} w={'40%'} textAlign={'center'} color={'white'} fontWeight={400} hidden={direction === 'column'}>Sistema de gestión de contenidos Técnica Martínez de alzaga - DOCENTE</Text>
                     <CustomButton bgColor={colors.blue3} link={'/'} texto={'Solicitar acceso'} color={'white'} />
                 </Stack>
                 <Stack w={'100%'} align={'center'}>

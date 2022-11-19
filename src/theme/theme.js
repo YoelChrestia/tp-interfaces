@@ -10,7 +10,7 @@ export const colors = {
 }
 
 export const sizes = {
-    hiperTitle: '40px',
+    hiperTitle: '36px',
     title: '24px',
     miniTitle: '21px',
     text: '16px',
