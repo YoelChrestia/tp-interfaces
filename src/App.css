@@ -3,3 +3,9 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+}
