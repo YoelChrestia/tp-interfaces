@@ -14,7 +14,7 @@ const Login = () => {
                 <Stack direction={direction} display={'flex'} justify={'space-between'} align={'center'} h={direction === 'row'?  'none' : '160px'}>
                     <Image src="/images/logo.svg" alt="logo" width={'120px'} height={'120px'} color={'blue'}/>
                     <Text fontSize={sizes.title} w={'40%'} textAlign={'center'} color={'white'} fontWeight={500} hidden={direction === 'column'}>Sistema de gestión de contenidos Técnica Martínez de alzaga - DOCENTE</Text>
-                    <CustomButton bgColor={colors.blue3} link={'wwww.google.com'} texto={'Solicitar acceso'} color={'white'} />
+                    <CustomButton bgColor={colors.blue3} link={'/home'} texto={'Solicitar acceso'} color={'white'} />
                 </Stack>
                 <Stack w={'100%'} align={'center'}>
                     <Box bgColor={colors.blue5} w={direction === 'row' ? '450px' : '300px'} h={'400px'} borderRadius={borders.borderRadius} align={'center'} mt={10} p={6}  boxShadow={boxShadow}>
@@ -23,7 +23,7 @@ const Login = () => {
                             <Input placeholder="Usuario" bgColor={'white'} borderRadius={borders.borderRadius} border={'none'} _focusVisible={{borderColor:'none'}}/>
                             <Input type={'password'} placeholder="Contraseña" bgColor={'white'} borderRadius={borders.borderRadius} border={'none'} _focusVisible={{borderColor:'none'}}/>
                         </Stack>
-                        <CustomButton bgColor={colors.buttonGreen} link={'wwww.google.com'} texto={'Ingresar'}  color={'white'} />
+                        <CustomButton bgColor={colors.buttonGreen} link={'/home'} texto={'Ingresar'}  color={'white'} />
                         <Text fontSize={sizes.details} color={'white'} mt={4} opacity={0.4}>Olvidaste tu contraseña?</Text>
                     </Box>
                 </Stack>
