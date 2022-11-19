@@ -1,8 +1,14 @@
-import { Text } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
+import Login from './pages/login/index'
+import './App.css'
+
 
 function App() {
   return (
-    <Text>Hola Mundo</Text>
+    <ChakraProvider>
+        <Login/>
+    </ChakraProvider>
+   
   );
 }
 
