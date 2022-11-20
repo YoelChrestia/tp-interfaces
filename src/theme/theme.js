@@ -22,3 +22,11 @@ export const borders = {
 };
 
 export const boxShadow = "0 4px 4px 0 rgba(0, 0, 0, 0.24)";
+
+export const calendarButtons = {
+  event: "#209ADF",
+  birthday: "#C9347B",
+  exam: "#EE4B4B",
+  acto: "#BE53F0",
+  finals: "#F2943D",
+};
