@@ -11,13 +11,21 @@ const NavBar = () => {
     <Stack
       bgColor={colors.blue5}
       w={"100%"}
-      height={"150px"}
+      height={"110px"}
       borderRadius={borders.borderRadius}
-      p={8}
+      px={8}
       direction={direction}
       color="white"
+      align={"center"}
     >
-      <Image src="/images/logo.svg" alt="logo" width={"80px"} height={"80px"} />
+      <Stack>
+        <Image
+          src="/images/logo.svg"
+          alt="logo"
+          width={"80px"}
+          height={"80px"}
+        />
+      </Stack>
       <Stack
         direction={direction}
         align={"center"}

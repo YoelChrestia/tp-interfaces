@@ -1,12 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { Route } from "wouter";
-import Home from "./pages/home";
+import Home from "./pages/home/index";
 import Login from "./pages/login/index";
-import Calendar from "./pages/calendar";
-import Materias from "./pages/materias";
-import Notas from "./pages/notas";
-import Mensajeria from "./pages/mensajeria";
-
+import Calendar from "./pages/calendar/index";
+import Notas from "./pages/notas/index";
+import Mensajeria from "./pages/mensajeria/index";
+import Materias from "./pages/materias/index";
 import "./App.css";
 
 function App() {
