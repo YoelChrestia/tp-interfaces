@@ -136,7 +136,7 @@ const Materias = () => {
                         textAlign="left"
                         bgColor={colors.blue5}
                         color={"white"}
-                        direction={direction}
+                        direction={"row"}
                         p={4}
                         borderRadius={borders.borderRadius}
                         justify={"space-between"}
@@ -154,13 +154,13 @@ const Materias = () => {
                       <Stack
                         spacing={3}
                         w={"100%"}
-                        direction={"row"}
                         justify={"space-between"}
+                        direction={direction === "row" ? "row" : "column"}
                       >
                         {materia.desplegable.map((desplegable) => {
                           return (
                             <Stack
-                              w={"25%"}
+                              w={direction === "row" ? "25%" : "100%"}
                               h={"70px"}
                               bgColor={"white"}
                               align={"center"}
