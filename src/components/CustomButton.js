@@ -14,6 +14,7 @@ const CustomButton = ({ bgColor, link, texto, color }) => {
         color={color}
         _hover={{ color: "black" }}
         boxShadow={boxShadow}
+        fontWeight={400}
       >
         {texto}
       </Button>

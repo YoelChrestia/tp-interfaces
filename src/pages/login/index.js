@@ -36,23 +36,23 @@ const Login = () => {
           direction={direction}
           display={"flex"}
           justify={"space-between"}
-          align={"start"}
-          h={direction === "row" ? "none" : "160px"}
+          align={direction === "row" ? "start" : "center"}
+          h={direction === "row" ? "160px" : "auto"}
+          gap={direction === "row" ? "0" : "5"}
         >
           <Image
-            src="/images/logo.svg"
-            alt="logo"
-            width={"120px"}
-            height={"120px"}
-            color={"blue"}
-          />
+          src="/images/logo.png"
+          alt="logo"
+          width={"82px"}
+          height={"64px"}
+          marginRight={direction === "row" ? "50px" : "0"}
+        />
           <Text
-            fontSize={sizes.hiperTitle}
-            w={"40%"}
+            fontSize={direction === "row" ? sizes.hiperTitle : sizes.title}
+            w={direction === "row" ? "40%" : "90%"}
             textAlign={"center"}
             color={"white"}
             fontWeight={400}
-            hidden={direction === "column"}
           >
             Sistema de gestión de contenidos Técnica Martínez de alzaga -
             DOCENTE
@@ -68,7 +68,7 @@ const Login = () => {
           <Box
             bgColor={colors.blue5}
             w={direction === "row" ? "450px" : "300px"}
-            h={"400px"}
+            h={direction === "row" ? "400px" : "auto"}
             borderRadius={borders.borderRadius}
             align={"center"}
             mt={100}

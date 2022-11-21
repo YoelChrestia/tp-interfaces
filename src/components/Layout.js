@@ -1,11 +1,11 @@
 import { Stack } from "@chakra-ui/react";
 import NavBar from "./NavBar";
 
-const Layout = ({ Component }) => {
+const Layout = ({children}) => {
   return (
     <Stack p={"30px"}>
       <NavBar />
-      {Component}
+      {children}
     </Stack>
   );
 };

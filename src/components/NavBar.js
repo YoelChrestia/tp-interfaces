@@ -1,5 +1,5 @@
-import { Image, Stack, useBreakpointValue } from "@chakra-ui/react";
-import { Link } from "wouter";
+import { Image, Stack, useBreakpointValue, Link } from "@chakra-ui/react";
+import { Link as RouteLink, useLocation } from "wouter";
 import { colors, borders } from "../theme/theme";
 
 const NavBar = () => {
@@ -7,6 +7,9 @@ const NavBar = () => {
     base: "column",
     md: "row",
   });
+
+  const [location, setLocation] = useLocation();
+
   return (
     <Stack
       bgColor={colors.blue5}
@@ -20,10 +23,10 @@ const NavBar = () => {
     >
       <Stack>
         <Image
-          src="/images/logo.svg"
+          src="/images/logo.png"
           alt="logo"
-          width={"80px"}
-          height={"80px"}
+          width={"82px"}
+          height={"64px"}
         />
       </Stack>
       <Stack
@@ -34,11 +37,11 @@ const NavBar = () => {
         pr={36}
         gap={10}
       >
-        <Link href="/home">Home</Link>
-        <Link href="/materias">Materias</Link>
-        <Link href="/notas">Notas</Link>
-        <Link href="/mensajeria">Mensajería</Link>
-        <Link href="/calendario-academico">Calendario académico</Link>
+        <RouteLink href="/home"><Link color={location === "/home" ? colors.buttonGreen : "white"}>Home</Link></RouteLink>
+        <RouteLink href="/materias"><Link color={location === "/materias" ? colors.buttonGreen : "white"}>Materias</Link></RouteLink>
+        <RouteLink href="/notas"><Link color={location === "/notas" ? colors.buttonGreen : "white"}>Notas</Link></RouteLink>
+        <RouteLink href="/mensajeria"><Link color={location === "/mensajeria" ? colors.buttonGreen : "white"}>Mensajería</Link></RouteLink>
+        <RouteLink href="/calendario-academico"><Link color={location === "/calendario-academico" ? colors.buttonGreen : "white"}>Calendario académico</Link></RouteLink>
       </Stack>
     </Stack>
   );

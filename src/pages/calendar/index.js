@@ -1,9 +1,8 @@
 import { Text, Stack, Image, useBreakpointValue, Box } from "@chakra-ui/react";
-import Layout from "../../components/Layout";
 import CustomButton from "../../components/CustomButton";
-import { colors, sizes, calendarButtons } from "../../theme/theme";
+import { colors, sizes, calendarButtons, borders } from "../../theme/theme";
 
-const ListaDeEventos = [
+export const ListaDeEventos = [
   "Cumpleaños Juana 1ero - 20 de Noviembre",
   "Clase de 2do TM - 25 de Noviembre",
   "Examenes finales - 30 de Noviembre",
@@ -26,9 +25,15 @@ const Calendar = () => {
     base: "column",
     md: "row",
   });
+
   const Calendar = () => {
     return (
-      <Stack direction={direction} w={"100%"}>
+      <Stack direction={direction} w={"100%"} justify={"space-between"}
+      p={6}
+      bgColor={colors.blue1}
+      gap={10}
+      borderRadius={borders.borderRadius}
+      >
         <Stack w={"25%"} p={6}>
           <Text fontSize={sizes.miniTitle} mb={4} color={colors.blue4}>
             Próximos eventos
@@ -59,6 +64,7 @@ const Calendar = () => {
             width={"750px"}
             height={"100%"}
             alignSelf="center"
+            borderRadius={borders.borderRadius}
           />
         </Stack>
 
@@ -80,7 +86,7 @@ const Calendar = () => {
     );
   };
 
-  return <Layout Component={<Calendar />} />;
+  return <Calendar />;
 };
 
 export default Calendar;

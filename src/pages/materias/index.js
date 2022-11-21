@@ -1,4 +1,3 @@
-import Layout from "../../components/Layout";
 import {
   Stack,
   Text,
@@ -16,19 +15,47 @@ import { Link } from "wouter";
 const materias = [
   {
     icono: <Icon src={"/images/fisica.png"} />,
-    nombre: "Fisica",
+    nombre: "Matemática",
     curso: "2do",
     turno: "Mañana",
     desplegable: [
       {
         icono: <Icon src={"/images/asistencias.png"} />,
         texto: "Asistencias",
-        link: "/",
+        link: "/materias/asistencias",
       },
       {
         icono: <Icon src={"/images/contenido.png"} />,
         texto: "Contenido",
-        link: "/",
+        link: "/materias/contenido",
+      },
+      {
+        icono: <Icon src={"/images/notas.png"} />,
+        texto: "Notas",
+        link: "/notas",
+      },
+      {
+        icono: <Icon src={"/images/mensajeria.png"} />,
+        texto: "Mensajeria",
+        link: "/mensajeria",
+      },
+    ],
+  },
+  {
+    icono: <Icon src={"/images/fisica.png"} />,
+    nombre: "Matemática",
+    curso: "3ro",
+    turno: "Tarde",
+    desplegable: [
+      {
+        icono: <Icon src={"/images/asistencias.png"} />,
+        texto: "Asistencias",
+        link: "/materias/asistencias",
+      },
+      {
+        icono: <Icon src={"/images/contenido.png"} />,
+        texto: "Contenido",
+        link: "/materias/contenido",
       },
       {
         icono: <Icon src={"/images/notas.png"} />,
@@ -45,46 +72,18 @@ const materias = [
   {
     icono: <Icon src={"/images/fisica.png"} />,
     nombre: "Fisica",
-    curso: "2do",
-    turno: "Mañana",
+    curso: "4to",
+    turno: "Tarde",
     desplegable: [
       {
         icono: <Icon src={"/images/asistencias.png"} />,
         texto: "Asistencias",
-        link: "/",
+        link: "/materias/asistencias",
       },
       {
         icono: <Icon src={"/images/contenido.png"} />,
         texto: "Contenido",
-        link: "/",
-      },
-      {
-        icono: <Icon src={"/images/notas.png"} />,
-        texto: "Notas",
-        link: "/notas",
-      },
-      {
-        icono: <Icon src={"/images/mensajeria.png"} />,
-        texto: "Mensajeria",
-        link: "/mensajeria",
-      },
-    ],
-  },
-  {
-    icono: <Icon src={"/images/fisica.png"} />,
-    nombre: "Fisica",
-    curso: "2do",
-    turno: "Mañana",
-    desplegable: [
-      {
-        icono: <Icon src={"/images/asistencias.png"} />,
-        texto: "Asistencias",
-        link: "/",
-      },
-      {
-        icono: <Icon src={"/images/contenido.png"} />,
-        texto: "Contenido",
-        link: "/",
+        link: "/materias/contenido",
       },
       {
         icono: <Icon src={"/images/notas.png"} />,
@@ -105,6 +104,7 @@ const Materias = () => {
     base: "column",
     md: "row",
   });
+
   const Materias = () => {
     return (
       <Stack
@@ -118,7 +118,7 @@ const Materias = () => {
           bgColor={colors.blue5}
           w={"100%"}
           py={4}
-          px={8}
+          px={4}
           borderRadius={borders.borderRadius}
         >
           <Text color={"white"}>Materias dictadas</Text>
@@ -130,7 +130,7 @@ const Materias = () => {
               <>
                 <Accordion allowMultiple>
                   <AccordionItem>
-                    <AccordionButton>
+                    <AccordionButton _hover={{ background: "transparent"}}>
                       <Stack
                         flex="1"
                         textAlign="left"
@@ -191,7 +191,7 @@ const Materias = () => {
     );
   };
 
-  return <Layout Component={<Materias />} />;
+  return <Materias />;
 };
 
 export default Materias;
