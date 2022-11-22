@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   Stack,
   useBreakpointValue,
@@ -10,6 +11,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { borders, colors } from "../../theme/theme";
+import NotasFiltro from "./notasFiltro";
 
 const alumnos = [
   {
@@ -119,6 +121,14 @@ const alumnos = [
   },
 ];
 
+const apellidoAlumnos = () => {
+  let alumnitos = [];
+  alumnos.map((alumno) => {
+    return alumnitos.push(alumno.apellido);
+  });
+  return alumnitos;
+};
+
 const Notas = () => {
   const direction = useBreakpointValue({
     base: "column",
@@ -126,6 +136,24 @@ const Notas = () => {
   });
 
   const Notas = () => {
+    const [alumnoFiltrado, setAlumnosFiltrados] = useState("");
+    const [alumnoMostrar, setAlumnoMostrar] = useState([]);
+
+    useEffect(() => {
+      let alumnosFiltered = [...alumnos];
+
+      if (alumnoFiltrado === "default") {
+        setAlumnoMostrar(...alumnos);
+      }
+
+      if (alumnoFiltrado && alumnoFiltrado !== "0") {
+        alumnosFiltered = alumnos.filter(
+          (alumno) => alumno.apellido === alumnoFiltrado
+        );
+      }
+      setAlumnoMostrar(alumnosFiltered);
+    }, [alumnoFiltrado, alumnos]);
+
     return (
       <Stack
         direction={"column"}
@@ -135,6 +163,10 @@ const Notas = () => {
         gap={10}
         borderRadius={borders.borderRadius}
       >
+        <NotasFiltro
+          alumnos={apellidoAlumnos()}
+          setAlumnosFiltrados={setAlumnosFiltrados}
+        />
         <Table size="sm" w={"100%"} variant="striped" colorScheme="gray">
           <Thead>
             <Tr>
@@ -147,10 +179,10 @@ const Notas = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {alumnos.map((alumno) => {
+            {alumnoMostrar.map((alumno) => {
               return (
                 <Tr>
-                  <Td align="center">
+                  <Td align="center" value={alumno.apellido}>
                     {alumno.nombre} {alumno.apellido}
                   </Td>
                   <Td align="center">{alumno.primeraNota}</Td>
