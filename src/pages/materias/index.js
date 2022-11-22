@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Stack,
   Text,
@@ -12,41 +13,12 @@ import {
 import { colors, borders } from "../../theme/theme";
 import { Link } from "wouter";
 import MateriaFiltro from "./materiaFiltro";
-import { useEffect, useState } from "react";
 
 const materias = [
   {
     icono: <Icon src={"/images/fisica.png"} />,
     nombre: "Matemática",
     curso: "2do",
-    turno: "Mañana",
-    desplegable: [
-      {
-        icono: <Icon src={"/images/asistencias.png"} />,
-        texto: "Asistencias",
-        link: "/materias/asistencias",
-      },
-      {
-        icono: <Icon src={"/images/contenido.png"} />,
-        texto: "Contenido",
-        link: "/materias/contenido",
-      },
-      {
-        icono: <Icon src={"/images/notas.png"} />,
-        texto: "Notas",
-        link: "/notas",
-      },
-      {
-        icono: <Icon src={"/images/mensajeria.png"} />,
-        texto: "Mensajeria",
-        link: "/mensajeria",
-      },
-    ],
-  },
-  {
-    icono: <Icon src={"/images/fisica.png"} />,
-    nombre: "Lengua",
-    curso: "4ro",
     turno: "Mañana",
     desplegable: [
       {
@@ -137,7 +109,7 @@ const nombreMaterias = () => {
   return mats;
 };
 
-const Materias = () => {
+const Materias = ({ filtroMaterias, setFiltroMaterias }) => {
   const [materiaFiltrada, setMateriaFiltrada] = useState("");
   const [materiaMostrar, setMateriaMostrar] = useState([]);
   const direction = useBreakpointValue({
@@ -152,7 +124,7 @@ const Materias = () => {
       setMateriaMostrar(...materias);
     }
 
-    if (materiaFiltrada && materiaFiltrada !== "0") {
+    if (materiaFiltrada && materiaFiltrada !== "default") {
       materiasFiltered = materias.filter(
         (materia) => materia.nombre === materiaFiltrada
       );
@@ -217,9 +189,10 @@ const Materias = () => {
                         justify={"space-between"}
                         direction={direction === "row" ? "row" : "column"}
                       >
-                        {materia.desplegable.map((desplegable) => {
+                        {materia.desplegable.map((desplegable, key) => {
                           return (
                             <Stack
+                              key={key}
                               w={direction === "row" ? "25%" : "100%"}
                               h={"70px"}
                               bgColor={"white"}
@@ -229,6 +202,10 @@ const Materias = () => {
                               cursor="pointer"
                               direction={"row"}
                               _hover={{ color: colors.blue3 }}
+                              onChange={
+                                desplegable.texto === "Notas" &&
+                                setFiltroMaterias(materia.nombre)
+                              }
                             >
                               {desplegable.icono}
                               <Text>

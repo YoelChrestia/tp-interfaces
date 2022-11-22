@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Route } from "wouter";
 import Home from "./pages/home/index";
@@ -10,23 +11,28 @@ import "./App.css";
 import Layout from "./components/Layout";
 
 function App() {
+  const [filtroMaterias, setFiltroMaterias] = useState("");
+
   return (
     <ChakraProvider>
       <Layout>
         <Route path="/home">
-          <Home/>
+          <Home />
         </Route>
         <Route path="/materias">
-          <Materias/>
+          <Materias
+            filtroMaterias={filtroMaterias}
+            setFiltroMaterias={setFiltroMaterias}
+          />
         </Route>
         <Route path="/notas">
-          <Notas/>
+          <Notas />
         </Route>
         <Route path="/mensajeria">
-          <Mensajeria/>
+          <Mensajeria />
         </Route>
         <Route path="/calendario-academico">
-          <Calendar/>
+          <Calendar />
         </Route>
         <Route path="/">
           <Login />
