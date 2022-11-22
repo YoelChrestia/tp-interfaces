@@ -10,8 +10,8 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
-import { borders, colors, sizes } from "../../theme/theme";
-import MateriaFiltro from "../materias/materiaFiltro";
+import { borders, colors, sizes } from "../../theme/theme"
+import {FiltroNota} from "../materias/filtroNotas"
 
 const alumnos = [
   {
@@ -65,35 +65,38 @@ const alumnos = [
   },
 ];
 
-const materias = ["Matematica", "Fisica", "Fisica II"];
+const materias = ["Matematica", "Fisica", "FisicaII"];
 
-const Notas = () => {
-  const [materiaFiltrada, setMateriaFiltrada] = useState("");
-  const [materiaMostrar, setMateriaMostrar] = useState([]);
+const Notas = ({materia}) => {
+  // const [materiaFiltrada, setMateriaFiltrada] = useState("");
+  // const [materiaMostrar, setMateriaMostrar] = useState([]);
 
-  useEffect(() => {
-    let materiasFiltered = [...materias];
+  // useEffect(() => {
+  //   let materiasFiltered = [...materias];
 
-    if (materiaFiltrada === "default") {
-      setMateriaMostrar(...materias);
-    }
+  //   if (materiaFiltrada === "default") {
+  //     setMateriaMostrar(...materias);
+  //   }
 
-    if (materiaFiltrada && materiaFiltrada !== "default") {
-      materiasFiltered = materias.filter(
-        (materia) => materia === materiaFiltrada
-      );
-    }
-    setMateriaMostrar(materiasFiltered);
-  }, [materiaFiltrada, materias]);
+  //   if (materiaFiltrada && materiaFiltrada !== "default") {
+  //     materiasFiltered = materias.filter(
+  //       (materia) => materia === materiaFiltrada
+  //     );
+  //   }
+  //   setMateriaMostrar(materiasFiltered);
+  // }, [materiaFiltrada, materias]);
 
   const Notas = () => {
     return (
       <Stack direction={"column"}>
-        <MateriaFiltro
+        {/* <MateriaFiltro
           materias={materias}
           setMateriaFiltrada={setMateriaFiltrada}
-        />
-        <Stack
+        /> */}
+        <FiltroNota materias={materias} value={materia}/> 
+        { materia === "" ? materias.map((e,y)=>{
+          return(
+          <Stack
           direction={"column"}
           w={"100%"}
           p={6}
@@ -102,7 +105,7 @@ const Notas = () => {
           borderRadius={borders.borderRadius}
         >
           <Stack px={4}>
-            <Text fontSize={sizes.miniTitle}>Matemática 2do T.M</Text>
+            <Text fontSize={sizes.miniTitle}>{materias[y]} T.M</Text>
           </Stack>
           <Table size="sm" w={"100%"} variant="striped" colorScheme="gray">
             <Thead>
@@ -157,8 +160,9 @@ const Notas = () => {
               Descargar PDF
             </Button>
           </Stack>
-        </Stack>
-        <Stack
+        </Stack>)  
+        }) : 
+          <Stack
           direction={"column"}
           w={"100%"}
           p={6}
@@ -167,7 +171,7 @@ const Notas = () => {
           borderRadius={borders.borderRadius}
         >
           <Stack px={4}>
-            <Text fontSize={sizes.miniTitle}>Física 4to T.T</Text>
+          <Text fontSize={sizes.miniTitle}>{materia === "Matematica" ? materias[0] : materias[1]} T.T</Text>
           </Stack>
           <Table size="sm" w={"100%"} variant="striped" colorScheme="gray">
             <Thead>
@@ -222,72 +226,7 @@ const Notas = () => {
               Descargar PDF
             </Button>
           </Stack>
-        </Stack>
-        <Stack
-          direction={"column"}
-          w={"100%"}
-          p={6}
-          bgColor={colors.blue1}
-          gap={10}
-          borderRadius={borders.borderRadius}
-        >
-          <Stack px={4}>
-            <Text fontSize={sizes.miniTitle}>Física 5to T.T</Text>
-          </Stack>
-          <Table size="sm" w={"100%"} variant="striped" colorScheme="gray">
-            <Thead>
-              <Tr>
-                <Th>Nombre del alumno</Th>
-                <Th>Primera Nota</Th>
-                <Th>Segunda Nota</Th>
-                <Th>Tercera Nota</Th>
-                <Th>Promedio</Th>
-                <Th>Condición</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {alumnos.map((alumno) => {
-                return (
-                  <Tr>
-                    <Td align="center" value={alumno.apellido}>
-                      {alumno.nombre} {alumno.apellido}
-                    </Td>
-                    <Td align="center">{alumno.primeraNota}</Td>
-                    <Td align="center">{alumno.segundaNota}</Td>
-                    <Td align="center">{alumno.terceraNota}</Td>
-                    <Td align="center">
-                      {Math.round(
-                        (alumno.primeraNota +
-                          alumno.segundaNota +
-                          alumno.terceraNota) /
-                          3
-                      )}
-                    </Td>
-                    {(alumno.primeraNota +
-                      alumno.segundaNota +
-                      alumno.terceraNota) /
-                      3 >=
-                    7 ? (
-                      <Td align="center" color={"green"}>
-                        Aprobado
-                      </Td>
-                    ) : (
-                      <Td align="center" color={"red"}>
-                        Desaprobado
-                      </Td>
-                    )}
-                  </Tr>
-                );
-              })}
-            </Tbody>
-          </Table>
-
-          <Stack w={"100%"}>
-            <Button bgColor={"red"} alignSelf={"end"} w={"15%"} size={"md"}>
-              Descargar PDF
-            </Button>
-          </Stack>
-        </Stack>
+        </Stack>}
       </Stack>
     );
   };

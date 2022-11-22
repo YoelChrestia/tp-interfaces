@@ -33,7 +33,7 @@ const materias = [
       {
         icono: <Image src={"/images/notas.png"} />,
         texto: "Notas",
-        link: "/notas",
+        link: "/notas/Matematica",
       },
       {
         icono: <Image src={"/images/mensajeria.png"} />,
@@ -60,7 +60,7 @@ const materias = [
       {
         icono: <Image src={"/images/notas.png"} />,
         texto: "Notas",
-        link: "/notas",
+        link: "/notas/Fisica",
       },
       {
         icono: <Image src={"/images/mensajeria.png"} />,
@@ -87,7 +87,7 @@ const materias = [
       {
         icono: <Image src={"/images/notas.png"} />,
         texto: "Notas",
-        link: "/notas",
+        link: "/notas/FisicaII",
       },
       {
         icono: <Image src={"/images/mensajeria.png"} />,
@@ -106,7 +106,7 @@ const nombreMaterias = () => {
   return mats;
 };
 
-const Materias = ({ filtroMaterias, setFiltroMaterias }) => {
+const Materias = () => {
   const [materiaFiltrada, setMateriaFiltrada] = useState("");
   const [materiaMostrar, setMateriaMostrar] = useState([]);
   const direction = useBreakpointValue({
@@ -199,10 +199,6 @@ const Materias = ({ filtroMaterias, setFiltroMaterias }) => {
                               cursor="pointer"
                               direction={"row"}
                               _hover={{ color: colors.blue3 }}
-                              onChange={
-                                desplegable.texto === "Notas" &&
-                                setFiltroMaterias(materia.nombre)
-                              }
                             >
                               {desplegable.icono}
                               <Text>
