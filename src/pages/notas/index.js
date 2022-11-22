@@ -7,6 +7,7 @@ import {
   Th,
   Tr,
   Td,
+  Button,
 } from "@chakra-ui/react";
 import { borders, colors } from "../../theme/theme";
 
@@ -127,7 +128,7 @@ const Notas = () => {
   const Notas = () => {
     return (
       <Stack
-        direction={direction}
+        direction={"column"}
         w={"100%"}
         p={6}
         bgColor={colors.blue1}
@@ -142,6 +143,7 @@ const Notas = () => {
               <Th>Segunda Nota</Th>
               <Th>Tercera Nota</Th>
               <Th>Promedio</Th>
+              <Th>Condición</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -180,6 +182,12 @@ const Notas = () => {
             })}
           </Tbody>
         </Table>
+
+        <Stack w={"100%"}>
+          <Button bgColor={"red"} alignSelf={"end"} w={"15%"} size={"md"}>
+            Descargar PDF
+          </Button>
+        </Stack>
       </Stack>
     );
   };
