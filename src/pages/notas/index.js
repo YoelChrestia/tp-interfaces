@@ -53,6 +53,69 @@ const alumnos = [
     segundaNota: 10,
     terceraNota: 10,
   },
+  {
+    nombre: "Jair",
+    apellido: "Bustos",
+    primeraNota: 7,
+    segundaNota: 10,
+    terceraNota: 8,
+  },
+  {
+    nombre: "Jair",
+    apellido: "Bustos",
+    primeraNota: 7,
+    segundaNota: 10,
+    terceraNota: 2,
+  },
+  {
+    nombre: "Jair",
+    apellido: "Bustos",
+    primeraNota: 7,
+    segundaNota: 10,
+    terceraNota: 5,
+  },
+  {
+    nombre: "Jair",
+    apellido: "Bustos",
+    primeraNota: 7,
+    segundaNota: 9,
+    terceraNota: 3,
+  },
+  {
+    nombre: "Jair",
+    apellido: "Bustos",
+    primeraNota: 7,
+    segundaNota: 6,
+    terceraNota: 1,
+  },
+  {
+    nombre: "Jair",
+    apellido: "Bustos",
+    primeraNota: 7,
+    segundaNota: 10,
+    terceraNota: 10,
+  },
+  {
+    nombre: "Jair",
+    apellido: "Bustos",
+    primeraNota: 7,
+    segundaNota: 2,
+    terceraNota: 10,
+  },
+  {
+    nombre: "Jair",
+    apellido: "Bustos",
+    primeraNota: 7,
+    segundaNota: 10,
+    terceraNota: 5,
+  },
+  {
+    nombre: "Jair",
+    apellido: "Bustos",
+    primeraNota: 7,
+    segundaNota: 9,
+    terceraNota: 10,
+  },
 ];
 
 const Notas = () => {
@@ -92,10 +155,12 @@ const Notas = () => {
                   <Td align="center">{alumno.segundaNota}</Td>
                   <Td align="center">{alumno.terceraNota}</Td>
                   <Td align="center">
-                    {(alumno.primeraNota +
-                      alumno.segundaNota +
-                      alumno.terceraNota) /
-                      3}
+                    {Math.round(
+                      (alumno.primeraNota +
+                        alumno.segundaNota +
+                        alumno.terceraNota) /
+                        3
+                    )}
                   </Td>
                   {(alumno.primeraNota +
                     alumno.segundaNota +
