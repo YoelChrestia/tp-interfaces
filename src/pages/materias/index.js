@@ -11,6 +11,8 @@ import {
 } from "@chakra-ui/react";
 import { colors, borders } from "../../theme/theme";
 import { Link } from "wouter";
+import MateriaFiltro from "./materiaFiltro";
+import { useEffect, useState } from "react";
 
 const materias = [
   {
@@ -43,9 +45,9 @@ const materias = [
   },
   {
     icono: <Icon src={"/images/fisica.png"} />,
-    nombre: "Matemática",
-    curso: "3ro",
-    turno: "Tarde",
+    nombre: "Lengua",
+    curso: "4ro",
+    turno: "Mañana",
     desplegable: [
       {
         icono: <Icon src={"/images/asistencias.png"} />,
@@ -97,13 +99,66 @@ const materias = [
       },
     ],
   },
+  {
+    icono: <Icon src={"/images/fisica.png"} />,
+    nombre: "Fisica II",
+    curso: "5to",
+    turno: "Tarde",
+    desplegable: [
+      {
+        icono: <Icon src={"/images/asistencias.png"} />,
+        texto: "Asistencias",
+        link: "/materias/asistencias",
+      },
+      {
+        icono: <Icon src={"/images/contenido.png"} />,
+        texto: "Contenido",
+        link: "/materias/contenido",
+      },
+      {
+        icono: <Icon src={"/images/notas.png"} />,
+        texto: "Notas",
+        link: "/notas",
+      },
+      {
+        icono: <Icon src={"/images/mensajeria.png"} />,
+        texto: "Mensajeria",
+        link: "/mensajeria",
+      },
+    ],
+  },
 ];
 
+const nombreMaterias = () => {
+  let mats = [];
+  materias.map((materia) => {
+    return mats.push(materia.nombre);
+  });
+  return mats;
+};
+
 const Materias = () => {
+  const [materiaFiltrada, setMateriaFiltrada] = useState("");
+  const [materiaMostrar, setMateriaMostrar] = useState([]);
   const direction = useBreakpointValue({
     base: "column",
     md: "row",
   });
+
+  useEffect(() => {
+    let materiasFiltered = [...materias];
+
+    if (materiaFiltrada === "default") {
+      setMateriaMostrar(...materias);
+    }
+
+    if (materiaFiltrada && materiaFiltrada !== "0") {
+      materiasFiltered = materias.filter(
+        (materia) => materia.nombre === materiaFiltrada
+      );
+    }
+    setMateriaMostrar(materiasFiltered);
+  }, [materiaFiltrada, materias]);
 
   const Materias = () => {
     return (
@@ -124,13 +179,18 @@ const Materias = () => {
           <Text color={"white"}>Materias dictadas</Text>
         </Stack>
 
+        <MateriaFiltro
+          materias={nombreMaterias()}
+          setMateriaFiltrada={setMateriaFiltrada}
+        />
+
         <Stack>
-          {materias.map((materia) => {
+          {materiaMostrar.map((materia) => {
             return (
               <>
                 <Accordion allowMultiple>
                   <AccordionItem>
-                    <AccordionButton _hover={{ background: "transparent"}}>
+                    <AccordionButton _hover={{ background: "transparent" }}>
                       <Stack
                         flex="1"
                         textAlign="left"
