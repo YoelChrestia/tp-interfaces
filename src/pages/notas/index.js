@@ -10,6 +10,51 @@ import {
 } from "@chakra-ui/react";
 import { borders, colors } from "../../theme/theme";
 
+const alumnos = [
+  {
+    nombre: "Pedro",
+    apellido: "Gomez",
+    primeraNota: 5,
+    segundaNota: 7,
+    terceraNota: 9,
+  },
+  {
+    nombre: "Luisa",
+    apellido: "Pedri",
+    primeraNota: 3,
+    segundaNota: 8,
+    terceraNota: 9,
+  },
+  {
+    nombre: "Luca",
+    apellido: "Bernacchia",
+    primeraNota: 10,
+    segundaNota: 10,
+    terceraNota: 10,
+  },
+  {
+    nombre: "Yoel",
+    apellido: "Chrestia",
+    primeraNota: 10,
+    segundaNota: 10,
+    terceraNota: 10,
+  },
+  {
+    nombre: "Jazmin",
+    apellido: "De Stefano",
+    primeraNota: 10,
+    segundaNota: 10,
+    terceraNota: 10,
+  },
+  {
+    nombre: "Jair",
+    apellido: "Bustos",
+    primeraNota: 7,
+    segundaNota: 10,
+    terceraNota: 10,
+  },
+];
+
 const Notas = () => {
   const direction = useBreakpointValue({
     base: "column",
@@ -37,13 +82,37 @@ const Notas = () => {
             </Tr>
           </Thead>
           <Tbody>
-            <Tr>
-              <Td align="center">Pedro Gomez</Td>
-              <Td align="center">6</Td>
-              <Td align="center">7</Td>
-              <Td align="center">10</Td>
-              <Td align="center">{6 + 7 + 10}</Td>
-            </Tr>
+            {alumnos.map((alumno) => {
+              return (
+                <Tr>
+                  <Td align="center">
+                    {alumno.nombre} {alumno.apellido}
+                  </Td>
+                  <Td align="center">{alumno.primeraNota}</Td>
+                  <Td align="center">{alumno.segundaNota}</Td>
+                  <Td align="center">{alumno.terceraNota}</Td>
+                  <Td align="center">
+                    {(alumno.primeraNota +
+                      alumno.segundaNota +
+                      alumno.terceraNota) /
+                      3}
+                  </Td>
+                  {(alumno.primeraNota +
+                    alumno.segundaNota +
+                    alumno.terceraNota) /
+                    3 >=
+                  7 ? (
+                    <Td align="center" color={"green"}>
+                      Aprobado
+                    </Td>
+                  ) : (
+                    <Td align="center" color={"red"}>
+                      Desaprobado
+                    </Td>
+                  )}
+                </Tr>
+              );
+            })}
           </Tbody>
         </Table>
       </Stack>
