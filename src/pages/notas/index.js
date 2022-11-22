@@ -3,6 +3,8 @@ import {
   useBreakpointValue,
   Table,
   Tbody,
+  Thead,
+  Th,
   Tr,
   Td,
 } from "@chakra-ui/react";
@@ -25,21 +27,22 @@ const Notas = () => {
         borderRadius={borders.borderRadius}
       >
         <Table size="sm" w={"100%"} variant="striped" colorScheme="gray">
+          <Thead>
+            <Tr>
+              <Th>Nombre del alumno</Th>
+              <Th>Primera Nota</Th>
+              <Th>Segunda Nota</Th>
+              <Th>Tercera Nota</Th>
+              <Th>Promedio</Th>
+            </Tr>
+          </Thead>
           <Tbody>
             <Tr>
-              <Td>inches</Td>
-              <Td>millimetres (mm)</Td>
-              <Td isNumeric>25.4</Td>
-            </Tr>
-            <Tr>
-              <Td>feet</Td>
-              <Td>centimetres (cm)</Td>
-              <Td isNumeric>30.48</Td>
-            </Tr>
-            <Tr>
-              <Td>yards</Td>
-              <Td>metres (m)</Td>
-              <Td isNumeric>0.91444</Td>
+              <Td align="center">Pedro Gomez</Td>
+              <Td align="center">6</Td>
+              <Td align="center">7</Td>
+              <Td align="center">10</Td>
+              <Td align="center">{6 + 7 + 10}</Td>
             </Tr>
           </Tbody>
         </Table>
