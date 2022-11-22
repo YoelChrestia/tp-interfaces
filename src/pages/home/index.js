@@ -29,12 +29,11 @@ const Home = () => {
       bgColor={colors.blue1}
       w={"100%"}
       direction={direction}
-      gap={10}
       borderRadius={borders.borderRadius}
     >
       <Stack
         bgColor={colors.blue1}
-        w={direction === "row" ? "50%" : "100%"}
+        w={direction === "row" ? "40%" : "100%"}
         direction={"column"}
         gap={5}
         p={6}
@@ -142,7 +141,7 @@ const Home = () => {
           </TableContainer>
         </Stack>
       </Stack>
-      <Stack p={6} w={direction === "row" ? "50%" : "100%"} gap={2}>
+      <Stack p={6} w={direction === "row" ? "60%" : "100%"} gap={2}>
         <Stack
           bg={"white"}
           borderRadius={"12px"}
