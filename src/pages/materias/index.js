@@ -3,7 +3,7 @@ import {
   Stack,
   Text,
   useBreakpointValue,
-  Icon,
+  Image,
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -16,84 +16,81 @@ import MateriaFiltro from "./materiaFiltro";
 
 const materias = [
   {
-    icono: <Icon src={"/images/fisica.png"} />,
     nombre: "Matemática",
     curso: "2do",
     turno: "Mañana",
     desplegable: [
       {
-        icono: <Icon src={"/images/asistencias.png"} />,
+        icono: <Image src={"/images/asistencias.png"} />,
         texto: "Asistencias",
         link: "/materias/asistencias",
       },
       {
-        icono: <Icon src={"/images/contenido.png"} />,
+        icono: <Image src={"/images/contenido.png"} />,
         texto: "Contenido",
         link: "/materias/contenido",
       },
       {
-        icono: <Icon src={"/images/notas.png"} />,
+        icono: <Image src={"/images/notas.png"} />,
         texto: "Notas",
         link: "/notas",
       },
       {
-        icono: <Icon src={"/images/mensajeria.png"} />,
+        icono: <Image src={"/images/mensajeria.png"} />,
         texto: "Mensajeria",
         link: "/mensajeria",
       },
     ],
   },
   {
-    icono: <Icon src={"/images/fisica.png"} />,
     nombre: "Fisica",
     curso: "4to",
     turno: "Tarde",
     desplegable: [
       {
-        icono: <Icon src={"/images/asistencias.png"} />,
+        icono: <Image src={"/images/asistencias.png"} />,
         texto: "Asistencias",
         link: "/materias/asistencias",
       },
       {
-        icono: <Icon src={"/images/contenido.png"} />,
+        icono: <Image src={"/images/contenido.png"} />,
         texto: "Contenido",
         link: "/materias/contenido",
       },
       {
-        icono: <Icon src={"/images/notas.png"} />,
+        icono: <Image src={"/images/notas.png"} />,
         texto: "Notas",
         link: "/notas",
       },
       {
-        icono: <Icon src={"/images/mensajeria.png"} />,
+        icono: <Image src={"/images/mensajeria.png"} />,
         texto: "Mensajeria",
         link: "/mensajeria",
       },
     ],
   },
   {
-    icono: <Icon src={"/images/fisica.png"} />,
     nombre: "Fisica II",
     curso: "5to",
     turno: "Tarde",
     desplegable: [
       {
-        icono: <Icon src={"/images/asistencias.png"} />,
+        icono: <Image src={"/images/asistencias.png"} />,
         texto: "Asistencias",
         link: "/materias/asistencias",
       },
       {
-        icono: <Icon src={"/images/contenido.png"} />,
+        icono: <Image src={"/images/contenido.png"} />,
         texto: "Contenido",
         link: "/materias/contenido",
       },
       {
-        icono: <Icon src={"/images/notas.png"} />,
+        icono: <Image src={"/images/notas.png"} />,
         texto: "Notas",
         link: "/notas",
       },
       {
-        icono: <Icon src={"/images/mensajeria.png"} />,
+        icono: <Image src={"/images/mensajeria.png"} />,
         texto: "Mensajeria",
         link: "/mensajeria",
       },
