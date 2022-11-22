@@ -15,6 +15,9 @@ function App() {
 
   return (
     <ChakraProvider>
+      <Route path="/">
+        <Login />
+      </Route>
       <Layout>
         <Route path="/home">
           <Home />
@@ -33,9 +36,6 @@ function App() {
         </Route>
         <Route path="/calendario-academico">
           <Calendar />
-        </Route>
-        <Route path="/">
-          <Login />
         </Route>
       </Layout>
     </ChakraProvider>
