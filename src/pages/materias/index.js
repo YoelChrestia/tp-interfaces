@@ -23,7 +23,7 @@ const materias = [
       {
         icono: <Image src={"/images/asistencias.png"} />,
         texto: "Asistencias",
-        link: "/materias/asistencias",
+        link: "/materias/Matematica",
       },
       {
         icono: <Image src={"/images/contenido.png"} />,
@@ -50,7 +50,7 @@ const materias = [
       {
         icono: <Image src={"/images/asistencias.png"} />,
         texto: "Asistencias",
-        link: "/materias/asistencias",
+        link: "/materias/Fisica",
       },
       {
         icono: <Image src={"/images/contenido.png"} />,
@@ -77,7 +77,7 @@ const materias = [
       {
         icono: <Image src={"/images/asistencias.png"} />,
         texto: "Asistencias",
-        link: "/materias/asistencias",
+        link: "/materias/FisicaII",
       },
       {
         icono: <Image src={"/images/contenido.png"} />,
