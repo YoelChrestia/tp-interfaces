@@ -14,7 +14,7 @@ const Layout = ({children}) => {
   return (
     <>
     {
-      location === '/' ? <>{children}</> : <Stack p={"30px"} pt={direction === "column" && "80px"}><NavBar />{children}</Stack>
+      location === '/' ? <>{children}</> : <Stack p={"30px"} pt={direction === "column" && "85px"}><NavBar />{children}</Stack>
     } 
     </>
   );

@@ -27,7 +27,7 @@ export const Router = () => {
       <Route path="/materias/Fisica">
         <Asistencia />
       </Route>
-      <Route path="/materias/FisicaII">
+      <Route path="/materias/Química">
         <Asistencia />
       </Route>
 
@@ -37,7 +37,7 @@ export const Router = () => {
       <Route path="/contenido/Fisica">
         <Contenido />
       </Route>
-      <Route path="/contenido/FisicaII">
+      <Route path="/contenido/Quimica">
         <Contenido />
       </Route>
 

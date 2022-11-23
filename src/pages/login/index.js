@@ -103,8 +103,8 @@ const Login = () => {
               color={"white"}
               width={"150px"}
             />
-            <Text fontSize={sizes.details} color={"white"} mt={4} opacity={0.4}>
-              Olvidaste tu contraseña?
+            <Text fontSize={sizes.details} color={"white"} mt={4} opacity={0.4} _hover={{cursor: "pointer"}}>
+              ¿Olvidaste tu contraseña?
             </Text>
           </Box>
         </Stack>
