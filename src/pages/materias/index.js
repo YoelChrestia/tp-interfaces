@@ -70,24 +70,24 @@ const materias = [
     ],
   },
   {
-    nombre: "Fisica II",
+    nombre: "Química",
     curso: "5to",
     turno: "Tarde",
     desplegable: [
       {
         icono: <Image src={"/images/asistencias.png"} />,
         texto: "Asistencias",
-        link: "/materias/FisicaII",
+        link: "/materias/Química",
       },
       {
         icono: <Image src={"/images/contenido.png"} />,
         texto: "Contenido",
-        link: "/contenido/FisicaII",
+        link: "/contenido/Química",
       },
       {
         icono: <Image src={"/images/notas.png"} />,
         texto: "Notas",
-        link: "/notas/FisicaII",
+        link: "/notas/Química",
       },
       {
         icono: <Image src={"/images/mensajeria.png"} />,

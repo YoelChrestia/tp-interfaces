@@ -66,7 +66,7 @@ const alumnos = [
   },
 ];
 
-const materias = ["Matematica", "Fisica", "Quimica"];
+const materias = ["Matematica", "Fisica", "Química"];
 
 const Notas = ({ materia }) => {
   const direction = useBreakpointValue({
@@ -169,7 +169,7 @@ const Notas = ({ materia }) => {
           >
             <Stack px={4}>
               <Text fontSize={sizes.miniTitle}>
-                {materia === "Matematica" ? materias[0] : materias[1]} T.T
+                {materia === "Matematica" ? materias[0] ? materia === "Fisica" : materias[1] : materias[2]} T.T
               </Text>
             </Stack>
             <TableContainer>
