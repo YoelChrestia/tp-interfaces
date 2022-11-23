@@ -7,6 +7,7 @@ import Notas from "./pages/notas/index";
 import Mensajeria from "./pages/mensajeria/index";
 import Materias from "./pages/materias/index";
 import Asistencia from "./pages/asistencia";
+import Contenido from "./pages/contenido";
 
 export const Router = () => {
   return (
@@ -29,6 +30,17 @@ export const Router = () => {
       <Route path="/materias/FisicaII">
         <Asistencia />
       </Route>
+
+      <Route path="/contenido/Matematica">
+        <Contenido />
+      </Route>
+      <Route path="/contenido/Fisica">
+        <Contenido />
+      </Route>
+      <Route path="/contenido/FisicaII">
+        <Contenido />
+      </Route>
+
       <Route path="/notas">
         <Notas materia={""} />
       </Route>

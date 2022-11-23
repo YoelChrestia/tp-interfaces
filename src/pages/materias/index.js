@@ -28,7 +28,7 @@ const materias = [
       {
         icono: <Image src={"/images/contenido.png"} />,
         texto: "Contenido",
-        link: "/materias/contenido",
+        link: "/contenido/Matematica",
       },
       {
         icono: <Image src={"/images/notas.png"} />,
@@ -55,7 +55,7 @@ const materias = [
       {
         icono: <Image src={"/images/contenido.png"} />,
         texto: "Contenido",
-        link: "/materias/contenido",
+        link: "/contenido/Fisica",
       },
       {
         icono: <Image src={"/images/notas.png"} />,
@@ -82,7 +82,7 @@ const materias = [
       {
         icono: <Image src={"/images/contenido.png"} />,
         texto: "Contenido",
-        link: "/materias/contenido",
+        link: "/contenido/FisicaII",
       },
       {
         icono: <Image src={"/images/notas.png"} />,
