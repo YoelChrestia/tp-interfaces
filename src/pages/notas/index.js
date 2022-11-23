@@ -1,5 +1,6 @@
 import {
   Stack,
+  TableContainer,
   Table,
   Tbody,
   Thead,
@@ -74,7 +75,7 @@ const Notas = ({ materia }) => {
   });
   const Notas = () => {
     return (
-      <Stack direction={"column"}>
+      <Stack direction={"column"} py={6}>
         <FiltroNota materias={materias} value={materia} />
         {materia === "" ? (
           materias.map((e, y) => {
@@ -84,65 +85,65 @@ const Notas = ({ materia }) => {
                 w={"100%"}
                 p={6}
                 bgColor={colors.blue1}
-                gap={10}
                 borderRadius={borders.borderRadius}
               >
                 <Stack px={4}>
                   <Text fontSize={sizes.miniTitle}>{materias[y]} T.M</Text>
                 </Stack>
-                <Table
-                  size="sm"
-                  w={"100%"}
-                  variant="striped"
-                  colorScheme="gray"
-                >
-                  <Thead>
-                    <Tr>
-                      <Th>Nombre del alumno</Th>
-                      <Th>Primera Nota</Th>
-                      <Th>Segunda Nota</Th>
-                      <Th>Tercera Nota</Th>
-                      <Th>Promedio</Th>
-                      <Th>Condición</Th>
-                    </Tr>
-                  </Thead>
-                  <Tbody>
-                    {alumnos.map((alumno) => {
-                      return (
-                        <Tr>
-                          <Td align="center" value={alumno.apellido}>
-                            {alumno.nombre} {alumno.apellido}
-                          </Td>
-                          <Td align="center">{alumno.primeraNota}</Td>
-                          <Td align="center">{alumno.segundaNota}</Td>
-                          <Td align="center">{alumno.terceraNota}</Td>
-                          <Td align="center">
-                            {Math.round(
-                              (alumno.primeraNota +
-                                alumno.segundaNota +
-                                alumno.terceraNota) /
-                                3
+                <TableContainer bg={"white"} borderRadius={"12px"}>
+                  <Table
+                    size="sm"
+                    w={"100%"}
+                    variant="striped"
+                    colorScheme="gray"
+                  >
+                    <Thead>
+                      <Tr>
+                        <Th>Nombre del alumno</Th>
+                        <Th>Primera Nota</Th>
+                        <Th>Segunda Nota</Th>
+                        <Th>Tercera Nota</Th>
+                        <Th>Promedio</Th>
+                        <Th>Condición</Th>
+                      </Tr>
+                    </Thead>
+                    <Tbody>
+                      {alumnos.map((alumno) => {
+                        return (
+                          <Tr>
+                            <Td align="center" value={alumno.apellido}>
+                              {alumno.nombre} {alumno.apellido}
+                            </Td>
+                            <Td align="center">{alumno.primeraNota}</Td>
+                            <Td align="center">{alumno.segundaNota}</Td>
+                            <Td align="center">{alumno.terceraNota}</Td>
+                            <Td align="center">
+                              {Math.round(
+                                (alumno.primeraNota +
+                                  alumno.segundaNota +
+                                  alumno.terceraNota) /
+                                  3
+                              )}
+                            </Td>
+                            {(alumno.primeraNota +
+                              alumno.segundaNota +
+                              alumno.terceraNota) /
+                              3 >=
+                            7 ? (
+                              <Td align="center" color={"green"}>
+                                Aprobado
+                              </Td>
+                            ) : (
+                              <Td align="center" color={"red"}>
+                                Desaprobado
+                              </Td>
                             )}
-                          </Td>
-                          {(alumno.primeraNota +
-                            alumno.segundaNota +
-                            alumno.terceraNota) /
-                            3 >=
-                          7 ? (
-                            <Td align="center" color={"green"}>
-                              Aprobado
-                            </Td>
-                          ) : (
-                            <Td align="center" color={"red"}>
-                              Desaprobado
-                            </Td>
-                          )}
-                        </Tr>
-                      );
-                    })}
-                  </Tbody>
-                </Table>
-
+                          </Tr>
+                        );
+                      })}
+                    </Tbody>
+                  </Table>
+                </TableContainer>
                 <Stack w={"100%"}>
                   <Button
                     bgColor={colors.blue5}
