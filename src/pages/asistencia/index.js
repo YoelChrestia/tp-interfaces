@@ -8,6 +8,7 @@ import {
   Td,
   Button,
   Text,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { borders, colors, sizes } from "../../theme/theme";
 
@@ -50,6 +51,10 @@ const alumnos = [
 ];
 
 const Asistencia = ({ materia }) => {
+  const direction = useBreakpointValue({
+    base: "column",
+    md: "row",
+  });
   const Notas = () => {
     return (
       <Stack direction={"column"}>
@@ -105,7 +110,7 @@ const Asistencia = ({ materia }) => {
             <Button
               bgColor={colors.blue5}
               alignSelf={"end"}
-              w={"15%"}
+              w={direction === "row" ? "15%" : "100%"}
               size={"md"}
               color={"white"}
             >
