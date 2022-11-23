@@ -102,7 +102,13 @@ const Asistencia = ({ materia }) => {
           </Table>
 
           <Stack w={"100%"}>
-            <Button bgColor={"red"} alignSelf={"end"} w={"15%"} size={"md"}>
+            <Button
+              bgColor={colors.blue5}
+              alignSelf={"end"}
+              w={"15%"}
+              size={"md"}
+              color={"white"}
+            >
               Descargar PDF
             </Button>
           </Stack>
