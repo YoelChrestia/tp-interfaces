@@ -14,7 +14,7 @@ const MateriaFiltro = ({ materias, setMateriaFiltrada }) => {
       borderRadius={borders.borderRadius}
       onChange={(e) => setMateriaFiltrada(e.target.value)}
     >
-      <option defaultChecked value={"default"}>
+      <option defaultChecked value={""}>
         Selecciona la materia
       </option>
       {materias.map((materia) => {

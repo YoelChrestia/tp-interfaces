@@ -117,10 +117,6 @@ const Materias = () => {
   useEffect(() => {
     let materiasFiltered = [...materias];
 
-    if (materiaFiltrada === "default") {
-      setMateriaMostrar(...materias);
-    }
-
     if (materiaFiltrada && materiaFiltrada !== "default") {
       materiasFiltered = materias.filter(
         (materia) => materia.nombre === materiaFiltrada

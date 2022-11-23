@@ -50,8 +50,8 @@ export const Router = () => {
       <Route path="/notas/Fisica">
         <Notas materia={"Fisica"} />
       </Route>
-      <Route path="/notas/FisicaII">
-        <Notas materia={"FisicaII"} />
+      <Route path="/notas/Quimica">
+        <Notas materia={"Quimica"} />
       </Route>
       <Route path="/mensajeria">
         <Mensajeria />

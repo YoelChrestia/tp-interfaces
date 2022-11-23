@@ -9,6 +9,7 @@ import {
   Button,
   Text,
   useBreakpointValue,
+  TableContainer,
 } from "@chakra-ui/react";
 import { borders, colors, sizes } from "../../theme/theme";
 
@@ -69,43 +70,44 @@ const Asistencia = ({ materia }) => {
           <Stack px={4}>
             <Text fontSize={sizes.miniTitle}>Lista de Asistencias</Text>
           </Stack>
-          <Table size="sm" w={"100%"} variant="striped" colorScheme="gray">
-            <Thead>
-              <Tr>
-                <Th>Nombre del alumno</Th>
-                <Th>Cantidad de Asistencias</Th>
-                <Th>Condición</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {alumnos.map((alumno) => {
-                return (
-                  <Tr>
-                    <Td align="center" value={alumno.apellido}>
-                      {alumno.nombre} {alumno.apellido}
-                    </Td>
-                    <Td align="center" value={alumno.cantidadAsistencia}>
-                      {alumno.cantidadAsistencia}
-                    </Td>
-                    {alumno.cantidadAsistencia > 24 ? (
-                      <>
-                        <Td align="center" color={"red"}>
-                          Queda libre
-                        </Td>
-                      </>
-                    ) : (
-                      <>
-                        <Td align="center" color={"green"}>
-                          Cursando
-                        </Td>
-                      </>
-                    )}
-                  </Tr>
-                );
-              })}
-            </Tbody>
-          </Table>
-
+          <TableContainer>
+            <Table size="sm" w={"100%"} variant="striped" colorScheme="gray">
+              <Thead>
+                <Tr>
+                  <Th>Nombre del alumno</Th>
+                  <Th>Cantidad de Asistencias</Th>
+                  <Th>Condición</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {alumnos.map((alumno) => {
+                  return (
+                    <Tr>
+                      <Td align="center" value={alumno.apellido}>
+                        {alumno.nombre} {alumno.apellido}
+                      </Td>
+                      <Td align="center" value={alumno.cantidadAsistencia}>
+                        {alumno.cantidadAsistencia}
+                      </Td>
+                      {alumno.cantidadAsistencia > 24 ? (
+                        <>
+                          <Td align="center" color={"red"}>
+                            Queda libre
+                          </Td>
+                        </>
+                      ) : (
+                        <>
+                          <Td align="center" color={"green"}>
+                            Cursando
+                          </Td>
+                        </>
+                      )}
+                    </Tr>
+                  );
+                })}
+              </Tbody>
+            </Table>
+          </TableContainer>
           <Stack w={"100%"}>
             <Button
               bgColor={colors.blue5}

@@ -14,6 +14,7 @@ import {
   Tr,
   Td,
   Button,
+  TableContainer,
 } from "@chakra-ui/react";
 import { colors, borders, sizes } from "../../theme/theme";
 
@@ -91,7 +92,6 @@ const Contenido = () => {
         w={"100%"}
         p={6}
         bgColor={colors.blue1}
-        gap={10}
         borderRadius={borders.borderRadius}
       >
         <Accordion allowMultiple>
@@ -191,46 +191,48 @@ const Contenido = () => {
                   direction={"row"}
                   _hover={{ color: colors.blue3 }}
                 >
-                  <Table
-                    size="sm"
-                    w={"100%"}
-                    variant="striped"
-                    colorScheme="gray"
-                  >
-                    <Thead>
-                      <Tr>
-                        <Th>Nombre del archivo</Th>
-                        <Th>Fecha de subida</Th>
-                        <Th></Th>
-                      </Tr>
-                    </Thead>
-                    <Tbody>
-                      {alumnos.map((alumno) => {
-                        return (
-                          <Tr>
-                            <Td align="center">{alumno.nombre}</Td>
-                            <Td
-                              align="center"
-                              value={alumno.cantidadAsistencia}
-                            >
-                              {alumno.cantidadAsistencia}
-                            </Td>
-                            <Td align="center">
-                              <Button
-                                bgColor={colors.red}
-                                fontSize={sizes.details}
-                                size={"sm"}
-                                color={"white"}
-                                _hover={{ bgColor: "black" }}
+                  <TableContainer>
+                    <Table
+                      size="sm"
+                      w={"100%"}
+                      variant="striped"
+                      colorScheme="gray"
+                    >
+                      <Thead>
+                        <Tr>
+                          <Th>Nombre del archivo</Th>
+                          <Th>Fecha de subida</Th>
+                          <Th></Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        {alumnos.map((alumno) => {
+                          return (
+                            <Tr>
+                              <Td align="center">{alumno.nombre}</Td>
+                              <Td
+                                align="center"
+                                value={alumno.cantidadAsistencia}
                               >
-                                Eliminar
-                              </Button>
-                            </Td>
-                          </Tr>
-                        );
-                      })}
-                    </Tbody>
-                  </Table>
+                                {alumno.cantidadAsistencia}
+                              </Td>
+                              <Td align="center">
+                                <Button
+                                  bgColor={colors.red}
+                                  fontSize={sizes.details}
+                                  size={"sm"}
+                                  color={"white"}
+                                  _hover={{ bgColor: "black" }}
+                                >
+                                  Eliminar
+                                </Button>
+                              </Td>
+                            </Tr>
+                          );
+                        })}
+                      </Tbody>
+                    </Table>
+                  </TableContainer>
                 </Stack>
               </Stack>
             </AccordionPanel>
@@ -273,46 +275,48 @@ const Contenido = () => {
                   direction={"row"}
                   _hover={{ color: colors.blue3 }}
                 >
-                  <Table
-                    size="sm"
-                    w={"100%"}
-                    variant="striped"
-                    colorScheme="gray"
-                  >
-                    <Thead>
-                      <Tr>
-                        <Th>Nombre del archivo</Th>
-                        <Th>Fecha de subida</Th>
-                        <Th></Th>
-                      </Tr>
-                    </Thead>
-                    <Tbody>
-                      {alumnos2.map((alumno) => {
-                        return (
-                          <Tr>
-                            <Td align="center">{alumno.nombre}</Td>
-                            <Td
-                              align="center"
-                              value={alumno.cantidadAsistencia}
-                            >
-                              {alumno.cantidadAsistencia}
-                            </Td>
-                            <Td align="center">
-                              <Button
-                                fontSize={sizes.details}
-                                size={"sm"}
-                                bgColor={colors.red}
-                                color={"white"}
-                                _hover={{ bgColor: "black" }}
+                  <TableContainer>
+                    <Table
+                      size="sm"
+                      w={"100%"}
+                      variant="striped"
+                      colorScheme="gray"
+                    >
+                      <Thead>
+                        <Tr>
+                          <Th>Nombre del archivo</Th>
+                          <Th>Fecha de subida</Th>
+                          <Th></Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        {alumnos2.map((alumno) => {
+                          return (
+                            <Tr>
+                              <Td align="center">{alumno.nombre}</Td>
+                              <Td
+                                align="center"
+                                value={alumno.cantidadAsistencia}
                               >
-                                Eliminar
-                              </Button>
-                            </Td>
-                          </Tr>
-                        );
-                      })}
-                    </Tbody>
-                  </Table>
+                                {alumno.cantidadAsistencia}
+                              </Td>
+                              <Td align="center">
+                                <Button
+                                  fontSize={sizes.details}
+                                  size={"sm"}
+                                  bgColor={colors.red}
+                                  color={"white"}
+                                  _hover={{ bgColor: "black" }}
+                                >
+                                  Eliminar
+                                </Button>
+                              </Td>
+                            </Tr>
+                          );
+                        })}
+                      </Tbody>
+                    </Table>
+                  </TableContainer>
                 </Stack>
               </Stack>
             </AccordionPanel>
