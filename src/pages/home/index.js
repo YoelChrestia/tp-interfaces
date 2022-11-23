@@ -41,15 +41,13 @@ const Home = () => {
       >
         <Stack gap={2}>
           <Stack
-            bg={"white"}
+            bg={colors.blue5}
             borderRadius={"12px"}
             px={5}
             py={2}
             direction="row"
-            width={"190px"}
           >
-            <Image src="/images/email.png" width={8} />
-            <Text width={"auto"} color={colors.blue4}>
+            <Text color="white" w="auto">
               Bloc de Notas
             </Text>
           </Stack>
@@ -83,16 +81,15 @@ const Home = () => {
         </Stack>
         <Stack direction={"column"} align={"start"} gap={2}>
           <Stack
-            bg={"white"}
-            borderRadius={"12px"}
+            bg={colors.blue5}
+            borderRadius="12px"
             px={5}
             py={2}
             direction="row"
-            width={"auto"}
+            w="100%"
           >
-            <Image src="/images/email.png" width={8} />
-            <Text width={"auto"} color={colors.blue4}>
-              Mensajeria
+            <Text color="white">
+              Ultimos Mensajes
             </Text>
           </Stack>
           <TableContainer bg={"white"} borderRadius={"12px"}>
@@ -144,15 +141,14 @@ const Home = () => {
       </Stack>
       <Stack p={6} w={direction === "row" ? "60%" : "100%"} gap={2}>
         <Stack
-          bg={"white"}
+          bg={colors.blue5}
           borderRadius={"12px"}
           px={5}
           py={2}
           direction="row"
           width={"auto"}
         >
-          <Image src="/images/email.png" width={8} />
-          <Text width={"auto"} color={colors.blue4}>
+          <Text width={"auto"} color="white">
             Calendario
           </Text>
         </Stack>
