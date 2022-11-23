@@ -1,4 +1,4 @@
-import { Stack } from "@chakra-ui/react";
+import { Stack, useBreakpointValue } from "@chakra-ui/react";
 import { useLocation } from "wouter";
 import NavBar from "./NavBar";
 
@@ -6,10 +6,15 @@ const Layout = ({children}) => {
 
   const [location, setLocation] = useLocation();
 
+  const direction = useBreakpointValue({
+    base: "column",
+    md: "row",
+  });
+
   return (
     <>
     {
-      location === '/' ? <>{children}</> : <Stack p={"30px"}><NavBar />{children}</Stack>
+      location === '/' ? <>{children}</> : <Stack p={"30px"} pt={direction === "column" && "80px"}><NavBar />{children}</Stack>
     } 
     </>
   );
