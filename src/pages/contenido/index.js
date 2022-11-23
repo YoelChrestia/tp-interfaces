@@ -191,13 +191,8 @@ const Contenido = () => {
                   direction={"row"}
                   _hover={{ color: colors.blue3 }}
                 >
-                  <TableContainer>
-                    <Table
-                      size="sm"
-                      w={"100%"}
-                      variant="striped"
-                      colorScheme="gray"
-                    >
+                  <TableContainer w={"100%"}>
+                    <Table size="sm" variant="striped" colorScheme="gray">
                       <Thead>
                         <Tr>
                           <Th>Nombre del archivo</Th>
@@ -275,13 +270,8 @@ const Contenido = () => {
                   direction={"row"}
                   _hover={{ color: colors.blue3 }}
                 >
-                  <TableContainer>
-                    <Table
-                      size="sm"
-                      w={"100%"}
-                      variant="striped"
-                      colorScheme="gray"
-                    >
+                  <TableContainer w={"100%"}>
+                    <Table size="sm" variant="striped" colorScheme="gray">
                       <Thead>
                         <Tr>
                           <Th>Nombre del archivo</Th>
