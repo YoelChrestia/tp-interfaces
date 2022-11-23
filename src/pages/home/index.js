@@ -69,6 +69,7 @@ const Home = () => {
             color={"white"}
             fontSize={sizes.details}
             texto={"Guardar"}
+            width={"150px"}
           />
           <Stack px={5} py={2} bg={"white"} borderRadius={"12px"}>
             <Text>

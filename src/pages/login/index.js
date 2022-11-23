@@ -41,12 +41,12 @@ const Login = () => {
           gap={direction === "row" ? "0" : "5"}
         >
           <Image
-          src="/images/logo.png"
-          alt="logo"
-          width={"82px"}
-          height={"64px"}
-          marginRight={direction === "row" ? "50px" : "0"}
-        />
+            src="/images/logo.png"
+            alt="logo"
+            width={"82px"}
+            height={"64px"}
+            marginRight={direction === "row" ? "50px" : "0"}
+          />
           <Text
             fontSize={direction === "row" ? sizes.hiperTitle : sizes.title}
             w={direction === "row" ? "40%" : "90%"}
@@ -62,6 +62,7 @@ const Login = () => {
             link={"/"}
             texto={"Solicitar acceso"}
             color={"white"}
+            width={"150px"}
           />
         </Stack>
         <Stack w={"100%"} align={"center"}>
@@ -100,6 +101,7 @@ const Login = () => {
               link={"/home"}
               texto={"Ingresar"}
               color={"white"}
+              width={"150px"}
             />
             <Text fontSize={sizes.details} color={"white"} mt={4} opacity={0.4}>
               Olvidaste tu contraseña?

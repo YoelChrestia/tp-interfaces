@@ -28,13 +28,16 @@ const Calendar = () => {
 
   const Calendar = () => {
     return (
-      <Stack direction={direction} w={"100%"} justify={"space-between"}
-      p={6}
-      bgColor={colors.blue1}
-      gap={10}
-      borderRadius={borders.borderRadius}
+      <Stack
+        direction={direction}
+        w={"100%"}
+        justify={"space-between"}
+        p={6}
+        bgColor={colors.blue1}
+        gap={10}
+        borderRadius={borders.borderRadius}
       >
-        <Stack w={"25%"} p={6}>
+        <Stack w={direction === "row" ? "25%" : "100%"} p={6}>
           <Text fontSize={sizes.miniTitle} mb={4} color={colors.blue4}>
             Próximos eventos
           </Text>
@@ -77,6 +80,7 @@ const Calendar = () => {
                   link={"/calendario-academico"}
                   color={"black"}
                   texto={button.text}
+                  width={direction === "row" ? "150px" : "100%"}
                 />
               </>
             );
