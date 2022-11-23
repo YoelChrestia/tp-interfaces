@@ -170,7 +170,7 @@ const Materias = () => {
                         borderRadius={borders.borderRadius}
                         justify={"space-between"}
                       >
-                        <Stack direction={"row"}>
+                        <Stack direction={direction}>
                           <Text>{materia.nombre}</Text>
                           <Text>Año: {materia.curso}</Text>
                           <Text>Turno: {materia.turno}</Text>
